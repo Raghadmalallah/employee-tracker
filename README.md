@@ -5,10 +5,13 @@
 ## Table of Contents
 - [Description](#description)
 - [Installation](#installation)
-- [WalkthroughVideo](#walkthroughvideo)
+- [Usage](#usage)
+- [Video](#video)
+- [Contact](#contact)
 </br>
+
 ## Description
- A SQL database that tracks employees, their roles, and their respective department, to provide users an interface by which to enter and manage information related to departments, roles and employees.</br>
+A SQL database that tracks employees, their roles, and their respective department, to provide users an interface by which to enter and manage information related to departments, roles and employees.</br>
 
 ## Installation
 - npm install
@@ -18,10 +21,16 @@
 ## Usage
  Enter relevant info when prompted.</br>
 
-## Walkthrough Video
+## Video
 
 
-Find me on GitHub: [raghadmalallah](https://github.com/raghadmalallah)
 
- Email me with any questions: raghadmalallah@gmail.com
+https://user-images.githubusercontent.com/88641373/139001212-8e5bdfe2-8a35-401c-98bb-3b98d71a3e47.mp4
+
+
+## Contact
+Find me on:
+- GitHub: [raghadmalallah](https://github.com/raghadmalallah)</br>
+- Linkden:[raghadmalallah](https://www.linkedin.com/in/raghad-malallah)
+- Email me with any questions: raghadmalallah@gmail.com
     
