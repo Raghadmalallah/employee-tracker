@@ -1,7 +1,9 @@
 const mysql = require('mysql');
 const inquirer = require('inquirer');
 const consoleTable = require('console.table');
+const util = require('util');
 const art = require('ascii-art');
+
 const connection = mysql.createConnection({
     host: 'localhost',
     port: 3306,
@@ -19,6 +21,8 @@ async function start() {
         console.log(err);
     }
 }
+
+connection.query = util.promisify(connection.query);
 
 connection.connect(function(err){
     if (err) throw err;
@@ -260,10 +264,37 @@ const employeeUpdate = async () => {
         
         let employees = await connection.query("SELECT * FROM employee");
 
+        let employeeSelection = await inquirer.prompt([
+            {
+                name: 'employee',
+                type: 'list',
+                choices: employees.map((employeeName) => {
+                    return {
+                        name: employeeName.first_name + " " + employeeName.last_name,
+                        value: employeeName.id
+                    }
+                }),
+                message: 'Please choose an employee to update.'
+            }
+        ]);
 
         let roles = await connection.query("SELECT * FROM role");
 
+        let roleSelection = await inquirer.prompt([
+            {
+                name: 'role',
+                type: 'list',
+                choices: roles.map((roleName) => {
+                    return {
+                        name: roleName.title,
+                        value: roleName.id
+                    }
+                }),
+                message: 'Please select the role to update the employee with.'
+            }
+        ]);
 
+        let result = await connection.query("UPDATE employee SET ? WHERE ?", [{ role_id: roleSelection.role }, { id: employeeSelection.employee }]);
 
         console.log(`The role was successfully updated.\n`);
         initialAction();

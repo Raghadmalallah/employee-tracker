@@ -15,9 +15,9 @@ VALUE ("Lead Engineer", 5000, 2),
 
 INSERT INTO employee (first_name, last_name, role_id, manager_id)
 VALUE ("Rahad", "Malallah", 1, null),
-      ("Raya", "Alhilali", 2, null),
-      ("Zaid","Alhilali", 3, null),
+      ("Raya", "Alhilali", 2, 1),
+      ("Zaid","Alhilali", 3, 1),
       ("Basma", "Alaa",  4, 1),
       ("Ali", "Mustafa", 4, 5),
       ("Yaser", "Sarmeed", 1, 6),
-      ("Rand", "Shawqi", 2, 7);
+      ("Rand", "Shawqi", 2, 2);
